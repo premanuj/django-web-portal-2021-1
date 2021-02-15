@@ -1,0 +1,5 @@
+Create a django project:
+django-admin startproject portal .
+
+Run django server
+python manage.py runserver
