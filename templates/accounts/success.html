@@ -16,18 +16,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h2 class="h3">Register now</h2>
-            <form method="post" enctype="multipart/form-data" >
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button type="submit" class="btn btn-info">Register</button>
-
-                <!-- {% for field  in form.fields %}
-
-                {{field}}
-                
-                {% endfor %} -->
-            </form>
+            <h2 class="h3">Congratulations !</h2>
+            <p>Thank yuo for registration. Please check your email to activate your account.</p>
+            <p>Go to <a href="{% url 'index' %}">home page</a></p>
           </div>
         </div>
       </div>
