@@ -1,0 +1,35 @@
+{% extends "partials/layout.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block external_links %}
+{% include "partials/external_links.html" %}
+{% endblock external_links %}
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+
+{% block body %}
+
+    <!-- Intro Section-->
+    <section class="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="h3">Congratulations !</h2>
+            <p>Thank yuo for registration. Please check your email to activate your account.</p>
+            <p>Go to <a href="{% url 'index' %}">home page</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock body %}
+
+{% block footer %}
+    {% include "partials/footer.html" %}
+{% endblock footer %}
+
+{% block external_scripts %}
+    {% include "partials/external_scripts.html" %}
+{% endblock external_scripts %}

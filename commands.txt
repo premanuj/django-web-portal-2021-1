@@ -1,0 +1,12 @@
+#Create a django project:
+django-admin startproject portal .
+
+#create new app
+python manage.py startapp app_namess
+
+#Run django server
+python manage.py runserver
+
+# git commands
+create new branch: git branch branch_name
+delete existing branch: git delete -D branch_names

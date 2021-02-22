@@ -1,0 +1,21 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% block external_links %}
+{% include "partials/external_links.html" %}
+{% endblock external_links %}
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+
+{% block body %}
+<p>this is home page</p>
+{% endblock body %}
+
+{% block footer %}
+    {% include "partials/footer.html" %}
+{% endblock footer %}
+
+{% block external_scripts %}
+    {% include "partials/external_scripts.html" %}
+{% endblock external_scripts %}
