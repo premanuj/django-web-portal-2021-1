@@ -37,7 +37,12 @@
             </li>
         </ul>
         <div class="navbar-text"><a href="#" class="search-btn"><i class="icon-search-1"></i></a></div>
-        <ul class="langs navbar-text"><a href="#" class="active">Login</a><span>           </span><a href="{% url 'register' %}" class="active">Signup</a></ul>
+        {% if request.user.is_authenticated %}
+        
+        <ul class="langs navbar-text"><a href="{% url 'logout'%}" class="active">Logout</a></ul>
+        {% else %}
+        <ul class="langs navbar-text"><a href="{% url 'login'%}" class="active">Login</a><span>           </span><a href="{% url 'register' %}" class="active">Signup</a></ul>
+        {% endif %}
         </div>
     </div>
     </nav>
