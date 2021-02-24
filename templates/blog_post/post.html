@@ -1,0 +1,45 @@
+{% extends "partials/layout.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block external_links %}
+{% include "partials/external_links.html" %}
+{% endblock external_links %}
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+
+{% block body %}
+
+    <!-- Intro Section-->
+    <section class="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="h3">Create New Post</h2>
+            <form method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-info">Create</button>
+
+                <!-- {% for field  in form.fields %}
+
+                {{field}}
+                
+                {% endfor %} -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock body %}
+
+{% block footer %}
+    {% include "partials/footer.html" %}
+{% endblock footer %}
+
+{% block external_scripts %}
+    {% include "partials/external_scripts.html" %}
+
+{% endblock external_scripts %}

@@ -29,7 +29,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="index.html" class="nav-link active ">Home</a>
             </li>
-            <li class="nav-item"><a href="blog.html" class="nav-link ">Blog</a>
+            <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link ">Blog</a>
             </li>
             <li class="nav-item"><a href="post.html" class="nav-link ">Post</a>
             </li>
@@ -39,7 +39,12 @@
         <div class="navbar-text"><a href="#" class="search-btn"><i class="icon-search-1"></i></a></div>
         {% if request.user.is_authenticated %}
         
-        <ul class="langs navbar-text"><a href="{% url 'logout'%}" class="active">Logout</a></ul>
+        <ul class="langs navbar-text"><a href="{% url 'logout'%}" class="active">Logout</a>
+        {% if request.user.is_superuser %}
+        <span>           </span>
+        <a href="{% url 'create_post' %}" class="active">Create Post</a>
+        {% endif %}
+        </ul>
         {% else %}
         <ul class="langs navbar-text"><a href="{% url 'login'%}" class="active">Login</a><span>           </span><a href="{% url 'register' %}" class="active">Signup</a></ul>
         {% endif %}

@@ -40,6 +40,9 @@ class UserReistrationView(View):
         else:
             template_name = "accounts/signup.html"
             return render(request, template_name, {"form": form})
+    
+    def put(self, request, *args, **kwargs):
+        pass
 
         
         
