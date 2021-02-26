@@ -1,0 +1,8 @@
+{% for post in  category.blog_categories.all %}
+<p>Title: {{ post.title }}</p>
+<p>Content: {{ post.content }}</p>
+<p>Author: {{ post.author.get_full_name }}</p>
+<p>
+Tags: {{post.tags.blog_tags.all}} #assignment
+</p>
+{% endfor %}

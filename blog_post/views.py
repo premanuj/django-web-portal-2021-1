@@ -22,6 +22,23 @@ class BlogPostCreateView(CreateView):
     template_name = "blog_post/post.html"
     fields = ('title', 'content', 'tags', 'categories', 'cover_image')
 
+
+# class CategoryRelatedPostList(ListView):
+#     model = Category
+#     context_object_name = 'categories'
+#     template_name='blog_post/category_posts.html'
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context[""] = 
+    #     return context
+
+class CategoryRelatedPostDetail(DetailView):
+    model = Category
+    context_object_name = 'category' # default object
+    template_name='blog_post/category_posts.html'
+
+
 # @method_decorator(methods = ["GET"])
 def get_tags(request):
     tags = Tag.objects.all()
